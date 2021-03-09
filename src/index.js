@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension'
 import './index.css';
 import App from './App';
+import rootReducer from './reducers/rootReducer'
 
 const initialState = {}
 let store = createStore(rootReducer, initialState, compose(applyMiddleware(thunk), composeWithDevTools())) 
