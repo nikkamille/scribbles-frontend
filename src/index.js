@@ -12,7 +12,7 @@ let store = createStore(rootReducer, initialState, compose(applyMiddleware(thunk
 // create a reducers folder; create a rootReducer file inside and import the other reducers and do combineReducers
 
 ReactDOM.render(
-  <Provider>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root')
