@@ -4,6 +4,10 @@ import fetchNotebooks from './actions/fetchNotebooks';
 
 class App extends Component {
 
+  componentDidMount() {
+    this.props.fetchNotebooks()
+  }
+
   render () {
     return (
       <div>
