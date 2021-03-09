@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import fetchNotebooks from './actions/fetchNotebooks';
 
 class App extends Component {
 
@@ -7,8 +9,8 @@ class App extends Component {
       <div>
         Hello Kuku!
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default connect (null, { fetchNotebooks })(App);
