@@ -1,3 +1,4 @@
+// This will be a route '/notebooks'
 import React, { Component } from 'react';
 
 class NotebooksContainer extends Component {
