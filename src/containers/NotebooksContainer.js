@@ -1,4 +1,4 @@
-import React, { Component } from 'redux';
+import React, { Component } from 'react';
 
 class NotebooksContainer extends Component {
     render() {
