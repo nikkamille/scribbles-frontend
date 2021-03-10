@@ -1,5 +1,6 @@
 // This will be a route '/notebooks'
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Notebooks from '../components/Notebooks';
 
 class NotebooksContainer extends Component {
@@ -13,4 +14,4 @@ class NotebooksContainer extends Component {
     }
 }
 
-export default NotebooksContainer
+export default connect()(NotebooksContainer)
