@@ -1,7 +1,13 @@
 export default function notebookReducer(state, action) {
 
-    // return console.log(action.payload)
-    return state
+    switch (action.type) {
+        case 'FETCH_NOTEBOOKS':
+            return {
+                notebooks: action.payload
+            }
+        default:
+            return state
+    }
     
 
 }
