@@ -14,7 +14,7 @@ class NotebooksContainer extends Component {
         return(
             <div>
                 I'm in my NotebooksContainer!
-                <Notebooks/>
+                <Notebooks notebooks={this.props.notebooks}/>
             </div>
         )
     }
