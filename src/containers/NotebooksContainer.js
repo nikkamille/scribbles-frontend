@@ -13,17 +13,17 @@ class NotebooksContainer extends Component {
     render() {
         return(
             <div>
-                I'm in my NotebooksContainer!
+                {/* I'm in my NotebooksContainer! */}
                 <Notebooks notebooks={this.props.notebooks}/>
             </div>
         )
     }
 }
 
-// const mapStateToProps = state => {
-//     return {
-//         notebooks: state.notebooks
-//     }
-// }
+const mapStateToProps = state => {
+    return {
+        notebooks: state.notebooks || []
+    }
+}
 
-export default connect(state => ({ notebooks: state.notebooks}), { fetchNotebooks })(NotebooksContainer)
+export default connect(mapStateToProps, { fetchNotebooks })(NotebooksContainer)
