@@ -20,10 +20,10 @@ class NotebooksContainer extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        notebooks: state.notebooks
-    }
-}
+// const mapStateToProps = state => {
+//     return {
+//         notebooks: state.notebooks
+//     }
+// }
 
-export default connect(mapStateToProps, { fetchNotebooks })(NotebooksContainer)
+export default connect(state => ({ notebooks: state.notebooks}), { fetchNotebooks })(NotebooksContainer)
