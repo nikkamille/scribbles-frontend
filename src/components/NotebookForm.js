@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 class NotebookForm extends Component {
+    
+    state = {title: ""}
+    
     render() {
         return(
             <div>
