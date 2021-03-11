@@ -13,7 +13,7 @@ class NotebooksContainer extends Component {
     render() {
         return(
             <div>
-                {/* I'm in my NotebooksContainer! */}
+                I'm in my NotebooksContainer!
                 <Notebooks notebooks={this.props.notebooks}/>
             </div>
         )
