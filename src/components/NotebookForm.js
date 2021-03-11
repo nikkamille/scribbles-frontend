@@ -4,7 +4,10 @@ class NotebookForm extends Component {
     render() {
         return(
             <div>
-                Input notebook here!
+                Create a new notebook!
+                <form>
+                    <input type="text" placeholder="Title" />
+                </form>
             </div>
         )
     }
