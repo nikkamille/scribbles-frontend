@@ -1,12 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function NewNotebookButton() {
     return (
         <div>
-            <button>New Notebook</button>
-            {/* When clicked, this should route to /notebooks/new */}
+            <Link to="/notebooks/new">
+                <button>New Notebook</button>
+            </Link>
         </div>
     )
+    
 }
 
 export default NewNotebookButton
