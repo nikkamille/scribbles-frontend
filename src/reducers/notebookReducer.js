@@ -5,6 +5,10 @@ export default function notebookReducer(state, action) {
             return {
                 notebooks: action.payload
             }
+        case 'ADD_NOTEBOOK':
+            return {
+                ...state, notebooks: [...state.notebooks, action.payload]
+            }
         default:
             return state
     }
