@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class NotebookForm extends Component {
     
@@ -27,4 +28,4 @@ class NotebookForm extends Component {
     }
 }
 
-export default NotebookForm
+export default connect(null, { addNotebook })(NotebookForm)
