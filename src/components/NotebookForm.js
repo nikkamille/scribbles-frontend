@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import addNotebook from '../actions/addNotebook'
 
 class NotebookForm extends Component {
     
