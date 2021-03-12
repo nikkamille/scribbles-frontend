@@ -9,8 +9,7 @@ import './index.css';
 import App from './App';
 // import rootReducer from './reducers/rootReducer'
 import notebookReducer from './reducers/notebookReducer'
-// npm install react-router-dom 
-// import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 
 const initialState = {}
@@ -18,9 +17,11 @@ let store = createStore(notebookReducer, initialState, compose(applyMiddleware(t
 // create a reducers folder; create a rootReducer file inside and import the other reducers and do combineReducers
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <Router>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </Router>,
   document.getElementById('root')
 );
 
