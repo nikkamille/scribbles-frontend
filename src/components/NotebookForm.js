@@ -16,6 +16,7 @@ class NotebookForm extends Component {
                 Create a new notebook!
                 <form>
                     <input type="text" placeholder="Title" value={this.state.title} name="title" onChange={this.handleChange}/>
+                    <input type="submit"/>
                 </form>
             </div>
         )
