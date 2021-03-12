@@ -1,4 +1,5 @@
 import React from 'react';
+import Notebook from './Notebook'
 
 const Notebooks = (props) => {
     // debugger
@@ -6,7 +7,8 @@ const Notebooks = (props) => {
     return (
         <div>
             Notebooks
-            {props.notebooks.map(notebook => <li key={notebook.id}>{notebook.title}</li>)}
+            {props.notebooks.map(notebook => 
+                <Notebook notebook={notebook}/>)}
         </div>
     )
 }
