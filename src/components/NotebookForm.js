@@ -13,7 +13,8 @@ class NotebookForm extends Component {
     }
 
     handleSubmit = (event) => {
-        preventDefault(event)
+        event.preventDefault()
+        this.props.addNotebook
     }
     
     render() {
