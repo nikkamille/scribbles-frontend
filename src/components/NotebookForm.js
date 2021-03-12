@@ -15,6 +15,7 @@ class NotebookForm extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.addNotebook(this.state)
+        this.setState({title: ""})
     }
     
     render() {
