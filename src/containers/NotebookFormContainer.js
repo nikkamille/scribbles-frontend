@@ -10,6 +10,7 @@ class NotebookFormContainer extends Component {
                 <Route exact path="/notebooks/new">
                     My NotebookFormContainer
                     <NotebookForm/>
+                    {/* Remove the dot */}
                 </Route>
             </div>
         )

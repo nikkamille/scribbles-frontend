@@ -25,6 +25,7 @@ class NotebookForm extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" placeholder="Title" value={this.state.title} name="title" onChange={this.handleChange}/>
                     <input type="submit"/>
+                    {/* When submit button is clicked, it should link to /notebooks */}
                 </form>
             </div>
         )

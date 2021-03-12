@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import Notebooks from '../components/Notebooks';
+import Notebook from '../components/Notebook';
 import fetchNotebooks from '../actions/fetchNotebooks';
 import NewNotebookButton from '../components/NewNotebookButton';
 
@@ -15,13 +16,13 @@ class NotebooksContainer extends Component {
     render() {
         return(
             <div>
-                {/* <Switch> */}
+                <Switch>
                     <Route exact path="/notebooks">
                         <NewNotebookButton />
-                        {/* This will route to ./notebooks/new */}
                         <Notebooks notebooks={this.props.notebooks}/>
                     </Route>
-                {/* </Switch> */}
+                    <Route exact path="/notebooks/:id" render={((routerProps) => <Notebook notebook={this.props.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
+                </Switch>
             </div>
         )
     }
