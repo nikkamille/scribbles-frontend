@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 import NotebooksContainer from './containers/NotebooksContainer';
-import NotebookFormContainer from './containers/NotebookFormContainer';
+// import NotebookFormContainer from './containers/NotebookFormContainer';
 
 class App extends Component {
 
@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <>
         <NotebooksContainer/>
-        <NotebookFormContainer/>
+        {/* <NotebookFormContainer/> */}
       </>
     )
   }

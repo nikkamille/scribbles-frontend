@@ -7,11 +7,11 @@ class NotebookFormContainer extends Component {
     render() {
         return (
             <div>
-                <Route exact path="/notebooks/new">
+                {/* <Route exact path="/notebooks/new"> */}
                     My NotebookFormContainer
                     <NotebookForm/>
                     {/* Remove the dot */}
-                </Route>
+                {/* </Route> */}
             </div>
         )
     }

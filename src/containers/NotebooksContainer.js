@@ -6,6 +6,7 @@ import Notebooks from '../components/Notebooks';
 import Notebook from '../components/Notebook';
 import fetchNotebooks from '../actions/fetchNotebooks';
 import NewNotebookButton from '../components/NewNotebookButton';
+import NotebookForm from '../components/NotebookForm';
 
 class NotebooksContainer extends Component {
     
@@ -20,6 +21,9 @@ class NotebooksContainer extends Component {
                     <Route exact path="/notebooks">
                         <NewNotebookButton />
                         <Notebooks notebooks={this.props.notebooks}/>
+                    </Route>
+                    <Route exact path="/notebooks/new">
+                        <NotebookForm />
                     </Route>
                     <Route exact path="/notebooks/:id" render={((routerProps) => <Notebook notebook={this.props.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
                 </Switch>

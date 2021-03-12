@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import addNotebook from '../actions/addNotebook'
 
 class NotebookForm extends Component {
@@ -16,6 +17,7 @@ class NotebookForm extends Component {
         event.preventDefault()
         this.props.addNotebook(this.state)
         this.setState({title: ""})
+        // this.props.history.push("/notebooks/:id")
     }
     
     render() {
@@ -32,4 +34,4 @@ class NotebookForm extends Component {
     }
 }
 
-export default connect(null, { addNotebook })(NotebookForm)
+export default withRouter(connect(null, { addNotebook })(NotebookForm))
