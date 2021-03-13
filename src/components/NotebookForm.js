@@ -17,7 +17,7 @@ class NotebookForm extends Component {
         event.preventDefault()
         this.props.addNotebook(this.state)
         this.setState({title: ""})
-        // this.props.history.push("/notebooks/:id")
+        this.props.history.push("/notebooks")
     }
     
     render() {
