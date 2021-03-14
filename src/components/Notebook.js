@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 function Notebook(props) {
     console.log(props)
@@ -8,6 +9,7 @@ function Notebook(props) {
     return(
         <>
             {notebook ? props.notebook.title : null}
+            {notebook ? null : <Redirect to="/notebooks" />}
         </>
     )
 }
