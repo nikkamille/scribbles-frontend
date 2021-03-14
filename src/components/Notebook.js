@@ -6,9 +6,9 @@ function Notebook(props) {
     let notebook = props.notebook
     
     return(
-        <li>
+        <>
             {notebook ? props.notebook.title : null}
-        </li>
+        </>
     )
 }
 
