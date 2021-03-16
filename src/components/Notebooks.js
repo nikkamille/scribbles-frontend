@@ -1,18 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import Notebook from './Notebook'
+import NotesContainer from '../containers/NotesContainer'
 
 
 const Notebooks = (props) => {
     return (
-        <ul>
-            Notebooks
-            {props.notebooks.map(notebook => 
-                <li key={notebook.id}>
-                    {/* <Notebook notebook={notebook}/> */}
-                    <Link to={`/notebooks/${notebook.id}`}>{notebook.title}</Link>
-                </li> )}
-        </ul>
+        <div>
+            <ul>
+                Notebooks
+                {props.notebooks.map(notebook => 
+                    <li key={notebook.id}>
+                        {/* <Notebook notebook={notebook}/> */}
+                        <Link to={`/notebooks/${notebook.id}`}>{notebook.title}</Link>
+                    </li> )}
+            </ul>
+
+            <div>
+                <NotesContainer/>
+            </div>
+        </div>
     )
 }
 
