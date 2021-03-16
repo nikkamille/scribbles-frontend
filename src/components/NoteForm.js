@@ -16,13 +16,18 @@ class NoteForm extends Component {
         })        
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault()
+        // this.props.addNote(this.state)
+    }
+
     render() {
         return (
             <div>
                 Write your notes here:
-                <form>
-                    <input type="text" placeholder="Title" name="title" onChange={this.handleChange}/><br/><br/>
-                    <textarea type="textarea" placeholder="Start writing" name="content" rows={15} cols={100} onChange={this.handleChange}/><br/><br/>
+                <form onSubmit={this.handleSubmit}>
+                    <input type="text" placeholder="Title" name="title" value={this.state.title} onChange={this.handleChange}/><br/><br/>
+                    <textarea type="textarea" placeholder="Start writing" name="content" value={this.state.content} rows={15} cols={100} onChange={this.handleChange}/><br/><br/>
                     <input type="submit"/>
                 </form>
             </div>
