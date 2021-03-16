@@ -9,11 +9,11 @@ export default function addNote(note) {
             body: JSON.stringify({note})
         }
         
-        // fetch('http://localhost:3000/notebooks', options)
-        // .then(response => response.json())
-        // .then(notebook => {
-        //     dispatch({type: 'ADD_NOTEBOOK', payload: notebook})
-        // })
+        fetch('http://localhost:3000/notebooks/${notebookId}/notes', options)
+        .then(response => response.json())
+        .then(note => {
+            dispatch({type: 'ADD_NOTE', payload: note})
+        })
         
     }
 }
