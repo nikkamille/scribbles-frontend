@@ -6,11 +6,12 @@ import NoteForm from '../components/NoteForm';
 class NotesContainer extends Component {
     
     render() {
+        // debugger
         return (
             <div>
                 My Notes Container!
                 <NoteForm/>
-                <Notes/>
+                <Notes notes={this.props.notebook ? this.props.notebook.notes : null}/>
             </div>
         )
     }

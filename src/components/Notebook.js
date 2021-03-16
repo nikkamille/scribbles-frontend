@@ -5,12 +5,14 @@ import NotesContainer from '../containers/NotesContainer'
 function Notebook(props) {
     
     let notebook = props.notebook
+
+    // debugger
     
     return(
         <>
             <h2>{notebook ? props.notebook.title : null}</h2>
             {notebook ? null : <Redirect to="/notebooks" />}
-            <NotesContainer/>
+            <NotesContainer notebook={notebook}/>
         </>
     )
 }
