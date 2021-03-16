@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NotesContainer from '../containers/NotesContainer'
+
 
 
 const Notebooks = (props) => {
@@ -14,10 +14,6 @@ const Notebooks = (props) => {
                         <Link to={`/notebooks/${notebook.id}`}>{notebook.title}</Link>
                     </li> )}
             </ul>
-
-            <div>
-                <NotesContainer/>
-            </div>
         </div>
     )
 }
