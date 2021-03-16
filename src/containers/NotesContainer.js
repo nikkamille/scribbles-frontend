@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 import Notes from '../components/Notes';
+import NoteForm from '../components/NoteForm';
 
 class NotesContainer extends Component {
     
@@ -8,7 +9,8 @@ class NotesContainer extends Component {
         return (
             <div>
                 My Notes Container!
-                <Notes />
+                <NoteForm/>
+                <Notes/>
             </div>
         )
     }
