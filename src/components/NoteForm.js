@@ -19,8 +19,7 @@ class NoteForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        // this.props.addNote(this.state, this.props.notebook.id)
-        this.props.addNote(this.state)
+        this.props.addNote(this.state, this.props.notebook.id)
         this.setState({
             title: "",
             content: "",

@@ -10,8 +10,15 @@ export default function notebookReducer(state, action) {
                 ...state, notebooks: [...state.notebooks, action.payload]
             }
         case 'ADD_NOTE':
+            let notebookId = action.payload.notebook_id
+            
+            // let note = state.notebooks.map(notebook => {
+            //     if (notebook.id === action.payload.notebook_id) {
+            //         return 
+            //     }
+            // })
             return {
-                ...state
+                ...state, notes: [...state.notebooks[action.payload.notebook_id].notes, action.payload]
             }
         default:
             return state

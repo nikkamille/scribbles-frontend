@@ -10,7 +10,7 @@ class NotesContainer extends Component {
         return (
             <div>
                 My Notes Container!
-                <NoteForm notebook={this.props.note}/>
+                <NoteForm notebook={this.props.notebook}/>
                 <Notes notes={this.props.notebook ? this.props.notebook.notes : null}/>
             </div>
         )
