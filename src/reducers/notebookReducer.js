@@ -10,15 +10,10 @@ export default function notebookReducer(state, action) {
                 ...state, notebooks: [...state.notebooks, action.payload]
             }
         case 'ADD_NOTE':
-            let notebookId = action.payload.notebook_id
-            
-            // let note = state.notebooks.map(notebook => {
-            //     if (notebook.id === action.payload.notebook_id) {
-            //         return 
-            //     }
-            // })
+            // let notebookId = action.payload.notebook_id
+            // Go back to video 9 if we get an error for the store. This should render the note right away.
             return {
-                ...state, notes: [...state.notebooks[action.payload.notebook_id].notes, action.payload]
+                ...state, note: [...state.notebooks[action.payload.notebook_id].notes, action.payload]
             }
         default:
             return state
