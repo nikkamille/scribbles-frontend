@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 
-const Notebooks = (props) => {
+function Notebooks(props) {
     return (
         <div>
             <ul>
