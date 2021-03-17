@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import addNote from '../actions/addNote';
 
 class NoteForm extends Component {
     
@@ -18,7 +19,13 @@ class NoteForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        // this.props.addNote(this.state)
+        // this.props.addNote(this.state, this.props.notebook.id)
+        this.props.addNote(this.state)
+        this.setState({
+            title: "",
+            content: "",
+            date: ""
+        })
     }
 
     render() {
@@ -26,6 +33,7 @@ class NoteForm extends Component {
             <div>
                 Write your notes here:
                 <form onSubmit={this.handleSubmit}>
+                    <input type="date" name="date" value={this.state.date} onChange={this.handleChange} /><br/><br/>
                     <input type="text" placeholder="Title" name="title" value={this.state.title} onChange={this.handleChange}/><br/><br/>
                     <textarea type="textarea" placeholder="Start writing" name="content" value={this.state.content} rows={15} cols={100} onChange={this.handleChange}/><br/><br/>
                     <input type="submit"/>
@@ -35,4 +43,4 @@ class NoteForm extends Component {
     }
 }
 
-export default connect(null)(NoteForm)
+export default connect(null, { addNote })(NoteForm)
