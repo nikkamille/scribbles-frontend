@@ -1,12 +1,16 @@
 import React from 'react';
+import Note from './Note';
 
 function Notes(props) {
-
-    // console.log(props)
-
+    // debugger
     return (
         <div>
-            All notes will go here.
+
+            All notes go here:
+            {props.notes && props.notes.map(note => 
+                <li key={note.id}>{note.title}</li>
+            )}
+        
         </div>
     )
 
