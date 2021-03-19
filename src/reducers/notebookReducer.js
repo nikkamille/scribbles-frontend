@@ -16,8 +16,10 @@ export default function notebookReducer(state, action) {
                 ...state, note: [...state.notebooks[action.payload.notebook_id].notes, action.payload]
             }
         case 'DELETE_NOTE':
+            // Fix reducer to return notes under a notebook.
+            const newNotes = state.notebooks[action.notebookId].notes.filter(note => note.id !== action.noteId)
             return {
-                
+                notes: newNotes
             }
         default:
             return state
