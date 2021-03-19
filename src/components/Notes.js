@@ -3,12 +3,12 @@ import { Link, Route } from 'react-router-dom';
 import Note from './Note';
 
 function Notes(props) {
-    debugger
+    // debugger
     return (
         <div>
             <br/>
             <ul>
-                {props.notebook && props.notebook.notes.map(note => 
+                {props.notes && props.notes.map(note => 
                     <li key={note.id}>
                         <Note note={note}/>
                         {/* {note.title} - {note.content} */}
