@@ -15,6 +15,7 @@ class NotebooksContainer extends Component {
     }
     
     render() {
+    debugger
         return(
             <div>
                 <Switch>
