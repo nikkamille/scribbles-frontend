@@ -1,9 +1,16 @@
-export default function notebookReducer(state, action) {
-    // debugger
+export default function notebookReducer(state = {
+    notebooks: [],
+    notes: []
+}, action) {
+    debugger
     switch (action.type) {
         case 'FETCH_NOTEBOOKS':
             return {
                 notebooks: action.payload
+            }
+        case 'FETCH_NOTES':
+            return {
+                notes: action.payload
             }
         case 'ADD_NOTEBOOK':
             return {

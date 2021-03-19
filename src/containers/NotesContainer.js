@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 import Notes from '../components/Notes';
 import NoteForm from '../components/NoteForm';
+import fetchNotes from '../actions/fetchNotes';
 import Note from '../components/Note';
 
 class NotesContainer extends Component {
+
+    componentDidMount() {
+        this.props.fetchNotes()
+    }
     
     render() {
-        // debugger
+        debugger
         return (
             <div>
                 My Notes Container!
@@ -21,13 +26,11 @@ class NotesContainer extends Component {
     }
 }
 
-// const mapStateToProps = (state) => {
-//     debugger
-//     console.log(state)
-//     return {
-        
-//         notes: state.notebooks
-//     }
-// }
+const mapStateToProps = (state) => {
+    return {
+        notes: state.notes || []
+    }
+}
 
-export default NotesContainer
+// export default NotesContainer
+export default connect(mapStateToProps, { fetchNotes })(NotesContainer)
