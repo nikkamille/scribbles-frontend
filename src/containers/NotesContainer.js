@@ -13,8 +13,8 @@ class NotesContainer extends Component {
             <div>
                 My Notes Container!
                 <NoteForm notebook={this.props.notebook}/>
-                <Notes notes={this.props.notebook ? this.props.notebook.notes : null}/>
-                <Route exact path="/notebooks/:id/notes/:id" render={(routerProps) => <Note {...routerProps}/>}/>
+                <Notes notebook={this.props.notebook ? this.props.notebook : null}/>
+                {/* <Route exact path="/notebooks/:id/notes/:id" render={(routerProps) => <Note {...routerProps}/>}/> */}
                 {/* <Route exact path="/notebooks/:id" render={((routerProps) => <Notebook notebook={this.props.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/> */}
             </div>
         )
