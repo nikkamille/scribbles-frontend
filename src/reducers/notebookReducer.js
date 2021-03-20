@@ -16,6 +16,11 @@ export default function notebookReducer(state = {
             return {
                 ...state, notebooks: [...state.notebooks, action.payload]
             }
+        case 'DELETE_NOTEBOOK':
+            const newNotebooks = state.notebooks.filter(notebook => notebook.id !== action.payload)
+            return {
+                notebooks: newNotebooks
+            }
         case 'ADD_NOTE':
             // let notebookId = action.payload.notebook_id
             // Go back to video 9 if we get an error for the store. This should render the note right away.
