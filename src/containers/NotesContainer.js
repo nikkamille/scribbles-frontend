@@ -8,12 +8,12 @@ import Note from '../components/Note';
 
 class NotesContainer extends Component {
 
-    componentDidMount() {
-        this.props.fetchNotes()
-    }
+    // componentDidMount() {
+    //     this.props.fetchNotes()
+    // }
     
     render() {
-        debugger
+        // debugger
         return (
             <div>
                 My Notes Container!

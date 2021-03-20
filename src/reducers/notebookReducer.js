@@ -2,7 +2,7 @@ export default function notebookReducer(state = {
     notebooks: [],
     notes: []
 }, action) {
-    debugger
+    // debugger
     switch (action.type) {
         case 'FETCH_NOTEBOOKS':
             return {
