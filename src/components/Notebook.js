@@ -19,8 +19,6 @@ function Notebook(props) {
     // const handleEditNotebook = (notebook) => {
     //     props.editNotebook(notebook)
     // }
-
-    // Add an alert - confirmation about deleting the notebook, along with all the notes.
     
     return(
         <>
@@ -30,7 +28,8 @@ function Notebook(props) {
                 <button>Edit Notebook</button>
             </Link>
             <NotesContainer notebook={notebook}/>
-            <button onClick={handleDelete}>Delete Notebook</button>
+            {/* <button onClick={handleDelete}>Delete Notebook</button> */}
+            <button onClick={() => {if (window.confirm("Are you sure you want to delete this notebook? This will also delete all your notes inside this notebook.")) handleDelete()}}>Delete Notebook</button>
         </>
     )
 }
