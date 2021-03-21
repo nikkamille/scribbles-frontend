@@ -28,7 +28,10 @@ class App extends Component {
             <NotebooksContainer notebooks={this.props.notebooks}/>
           </Route>
           <Route exact path="/notebooks/new">
-            <NotebookForm />
+            <NotebookForm/>
+          </Route>
+          <Route exact path="/notebooks/:id/edit">
+            <NotebookForm/>
           </Route>
           <Route exact path="/notebooks/:id" render={(routerProps => <Notebook notebook={this.props.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
         </Switch>

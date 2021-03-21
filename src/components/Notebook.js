@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import NotesContainer from '../containers/NotesContainer'
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import deleteNotebook from '../actions/deleteNotebook';
 
 function Notebook(props) {
@@ -12,15 +12,23 @@ function Notebook(props) {
     // debugger
 
     const handleDelete = () => {
-        console.log("Notebook Deleted")
         props.deleteNotebook(props.notebook.id)
         props.history.push("/notebooks")
     }
+
+    // const handleEditNotebook = (notebook) => {
+    //     props.editNotebook(notebook)
+    // }
+
+    // Add an alert - confirmation about deleting the notebook, along with all the notes.
     
     return(
         <>
             <h2>{notebook ? props.notebook.title : null}</h2>
             {notebook ? null : <Redirect to="/notebooks" />}
+            <Link to="/notebooks/:id/edit">
+                <button>Edit Notebook</button>
+            </Link>
             <NotesContainer notebook={notebook}/>
             <button onClick={handleDelete}>Delete Notebook</button>
         </>

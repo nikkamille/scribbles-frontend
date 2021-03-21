@@ -16,6 +16,10 @@ export default function notebookReducer(state = {
             return {
                 ...state, notebooks: [...state.notebooks, action.payload]
             }
+        case 'EDIT_NOTEBOOK':
+            return {
+                
+            }
         case 'DELETE_NOTEBOOK':
             const newNotebooks = state.notebooks.filter(notebook => notebook.id !== action.payload)
             return {

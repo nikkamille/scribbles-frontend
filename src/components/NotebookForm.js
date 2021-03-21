@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import addNotebook from '../actions/addNotebook'
+import editNotebook from '../actions/editNotebook';
 
 class NotebookForm extends Component {
     
@@ -15,7 +16,11 @@ class NotebookForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.addNotebook(this.state)
+        if(!this.props.notebook) { 
+            this.props.addNotebook(this.state)
+        } else {
+            this.props.editNotebook(this.state)
+        }
         this.setState({title: ""})
         this.props.history.push("/notebooks")
         // Add a default value for title - if notebook title is empty, it should show up as "Untitled Notebook"
@@ -24,7 +29,6 @@ class NotebookForm extends Component {
     render() {
         return(
             <div>
-                Create a new notebook!
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" placeholder="Title" value={this.state.title} name="title" onChange={this.handleChange}/>
                     <input type="submit"/>
