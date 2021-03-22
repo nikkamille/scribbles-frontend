@@ -6,7 +6,10 @@ import editNotebook from '../actions/editNotebook';
 
 class NotebookForm extends Component {
     
-    state = {title: this.props.notebook ? this.props.notebook.title : ""}
+    state = {
+        title: this.props.notebook ? this.props.notebook.title : "",
+        id: this.props.notebook ? this.props.notebook.id : ""
+    }
 
     // constructor(props) {
     //     super(props)
@@ -24,12 +27,12 @@ class NotebookForm extends Component {
     handleSubmit = (event) => {
         // debugger
         event.preventDefault()
-        let editedNotebook = {...this.state, id: this.props.notebook.id}
-        let notebookId = this.props.notebook.id
         if(!this.props.notebook) { 
             this.props.addNotebook(this.state)
             this.props.history.push("/notebooks")
         } else {
+            let notebookId = this.props.notebook.id
+            let editedNotebook = {...this.state, id: notebookId}
             this.props.editNotebook(editedNotebook)
             this.props.history.push(`/notebooks/${notebookId}`)
         }

@@ -28,7 +28,8 @@ class App extends Component {
             <NotebooksContainer notebooks={this.props.notebooks}/>
           </Route>
           <Route exact path="/notebooks/new">
-            <NotebookForm/>
+            <NotebookForm notebooks={this.props.notebooks}/> 
+            {/* Pass in the notebooks props so the notebook id can be accessed inside the notebook form. */}
           </Route>
           {/* <Route exact path="/notebooks/:id/edit">
             <NotebookForm notebook={this.props.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))}/>
