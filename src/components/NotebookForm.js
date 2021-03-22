@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import addNotebook from '../actions/addNotebook'
+import addNotebook from '../actions/addNotebook';
 import editNotebook from '../actions/editNotebook';
 
 class NotebookForm extends Component {
     
-    state = {title: ""}
+    state = {title: this.props.notebook ? this.props.notebook.title : ""}
+
+    // constructor(props) {
+    //     super(props)
+    //     this.state = {
+    //         title: this.props.title ? this
+    //     }
+    // }
     
     handleChange = (event) => {
         this.setState({
@@ -15,18 +22,24 @@ class NotebookForm extends Component {
     }
 
     handleSubmit = (event) => {
+        // debugger
         event.preventDefault()
+        let editedNotebook = {...this.state, id: this.props.notebook.id}
+        let notebookId = this.props.notebook.id
         if(!this.props.notebook) { 
             this.props.addNotebook(this.state)
+            this.props.history.push("/notebooks")
         } else {
-            this.props.editNotebook(this.state)
+            this.props.editNotebook(editedNotebook)
+            this.props.history.push(`/notebooks/${notebookId}`)
         }
         this.setState({title: ""})
-        this.props.history.push("/notebooks")
+        // this.props.history.push("/notebooks")
         // Add a default value for title - if notebook title is empty, it should show up as "Untitled Notebook"
     }
     
     render() {
+        // debugger
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>
@@ -38,4 +51,4 @@ class NotebookForm extends Component {
     }
 }
 
-export default withRouter(connect(null, { addNotebook })(NotebookForm))
+export default withRouter(connect(null, { addNotebook, editNotebook })(NotebookForm))

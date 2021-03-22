@@ -1,9 +1,10 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom';
 import NotesContainer from '../containers/NotesContainer'
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
 import deleteNotebook from '../actions/deleteNotebook';
+import NotebookForm from './NotebookForm';
 
 function Notebook(props) {
     
@@ -24,12 +25,16 @@ function Notebook(props) {
         <>
             <h2>{notebook ? props.notebook.title : null}</h2>
             {notebook ? null : <Redirect to="/notebooks" />}
-            <Link to="/notebooks/:id/edit">
+            <Link to={`/notebooks/${props.notebook.id}/edit`}>
                 <button>Edit Notebook</button>
             </Link>
             <NotesContainer notebook={notebook}/>
             {/* <button onClick={handleDelete}>Delete Notebook</button> */}
             <button onClick={() => {if (window.confirm("Are you sure you want to delete this notebook? This will also delete all your notes inside this notebook.")) handleDelete()}}>Delete Notebook</button>
+
+            {/* <Route exact path="/notebooks/:id/edit">
+                <NotebookForm notebook={props.notebook}/>
+            </Route> */}
         </>
     )
 }

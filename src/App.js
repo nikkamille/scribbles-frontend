@@ -15,11 +15,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // debugger
     this.props.fetchNotebooks()
   }
 
   render () {
+    // debugger
     return (
       <>
         <Navbar/>
@@ -30,10 +30,11 @@ class App extends Component {
           <Route exact path="/notebooks/new">
             <NotebookForm/>
           </Route>
-          <Route exact path="/notebooks/:id/edit">
-            <NotebookForm/>
-          </Route>
+          {/* <Route exact path="/notebooks/:id/edit">
+            <NotebookForm notebook={this.props.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))}/>
+          </Route> */}
           <Route exact path="/notebooks/:id" render={(routerProps => <Notebook notebook={this.props.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
+          <Route exact path="/notebooks/:id/edit" render={(routerProps => <NotebookForm notebook={this.props.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
         </Switch>
       </>
     )
