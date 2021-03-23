@@ -9,7 +9,7 @@ function Notebooks(props) {
         <div>
             <ul>
                 Notebooks
-                {props.notebooks.map(notebook => 
+                {props.notebooks.notebooks && props.notebooks.notebooks.map(notebook => 
                     <li key={notebook.id}>
                         {/* <Notebook notebook={notebook}/> */}
                         <Link to={`/notebooks/${notebook.id}`}>{notebook.title}</Link>

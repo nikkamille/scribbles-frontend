@@ -10,13 +10,6 @@ class NotebookForm extends Component {
         title: this.props.notebook ? this.props.notebook.title : "",
         id: this.props.notebook ? this.props.notebook.id : ""
     }
-
-    // constructor(props) {
-    //     super(props)
-    //     this.state = {
-    //         title: this.props.title ? this
-    //     }
-    // }
     
     handleChange = (event) => {
         this.setState({
@@ -25,7 +18,6 @@ class NotebookForm extends Component {
     }
 
     handleSubmit = (event) => {
-        // debugger
         event.preventDefault()
         if(!this.props.notebook) { 
             this.props.addNotebook(this.state)
@@ -41,7 +33,6 @@ class NotebookForm extends Component {
     }
     
     render() {
-        // debugger
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>
