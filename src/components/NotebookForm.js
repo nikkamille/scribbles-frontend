@@ -37,7 +37,6 @@ class NotebookForm extends Component {
             this.props.history.push(`/notebooks/${notebookId}`)
         }
         this.setState({title: ""})
-        // this.props.history.push("/notebooks")
         // Add a default value for title - if notebook title is empty, it should show up as "Untitled Notebook"
     }
     
