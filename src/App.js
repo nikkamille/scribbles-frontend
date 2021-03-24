@@ -7,6 +7,8 @@ import fetchNotebooks from './actions/fetchNotebooks';
 import Notebook from './components/Notebook';
 import NewNotebookButton from './components/NewNotebookButton';
 import NotebookForm from './components/NotebookForm';
+import fetchNotes from './actions/fetchNotes';
+import NotesContainer from './containers/NotesContainer';
 
 class App extends Component {
 
@@ -16,6 +18,7 @@ class App extends Component {
 
   componentDidMount() {
     this.props.fetchNotebooks()
+    this.props.fetchNotes()
   }
 
   render () {
@@ -36,6 +39,9 @@ class App extends Component {
           </Route> */}
           <Route exact path="/notebooks/:id" render={(routerProps => <Notebook notebook={this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
           <Route exact path="/notebooks/:id/edit" render={(routerProps => <NotebookForm notebook={this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
+          <Route exact path="/notes">
+            <NotesContainer/>
+          </Route>
         </Switch>
       </>
     )
@@ -48,4 +54,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { fetchNotebooks })(App)
+export default connect(mapStateToProps, { fetchNotebooks, fetchNotes })(App)

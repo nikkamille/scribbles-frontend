@@ -8,9 +8,9 @@ import Note from '../components/Note';
 
 class NotesContainer extends Component {
 
-    // componentDidMount() {
-    //     this.props.fetchNotes()
-    // }
+    componentDidMount() {
+        this.props.fetchNotes()
+    }
     
     render() {
         // debugger
@@ -21,6 +21,7 @@ class NotesContainer extends Component {
                 <Notes notes={this.props.notebook ? this.props.notebook.notes : null}/>
                 {/* <Route exact path="/notebooks/:id/notes/:id" render={(routerProps) => <Note {...routerProps}/>}/> */}
                 {/* <Route exact path="/notebooks/:id" render={((routerProps) => <Notebook notebook={this.props.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/> */}
+                
             </div>
         )
     }
