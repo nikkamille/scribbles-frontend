@@ -5,9 +5,8 @@ function Navbar(props) {
     return (
         <nav>
             <Link to="/notebooks/new">New Notebook</Link>
-            Notes 
-            {/* Notes should go to all notes /notes */}
             <Link to="/notebooks">Notebooks</Link>
+            <Link to="/notes">Notes</Link>
         </nav>
     )
 }
