@@ -13,7 +13,8 @@ import NotesContainer from './containers/NotesContainer';
 class App extends Component {
 
   state = {
-    notebooks: []
+    notebooks: [],
+    notes: []
   }
 
   componentDidMount() {
@@ -40,7 +41,7 @@ class App extends Component {
           <Route exact path="/notebooks/:id" render={(routerProps => <Notebook notebook={this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
           <Route exact path="/notebooks/:id/edit" render={(routerProps => <NotebookForm notebook={this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
           <Route exact path="/notes">
-            <NotesContainer/>
+            <NotesContainer notes={this.props.notes.notes}/>
           </Route>
         </Switch>
       </>
@@ -50,7 +51,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-      notebooks: state.notebooks || []
+      notebooks: state.notebooks || [],
+      notes: state.notes || []
   }
 }
 
