@@ -1,5 +1,6 @@
 export default function addNote(note, notebookId) {
     return (dispatch) => {
+        // debugger
         const options = {
             method: "POST",
             headers: {

@@ -39,12 +39,12 @@ class App extends Component {
           {/* <Route exact path="/notebooks/:id/edit">
             <NotebookForm notebook={this.props.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))}/>
           </Route> */}
-          <Route exact path="/notebooks/:id" render={(routerProps => <Notebook notebook={this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
-          <Route exact path="/notebooks/:id/edit" render={(routerProps => <NotebookForm notebook={this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
+          <Route exact path="/notebooks/:id" render={(routerProps => <Notebook notebook={this.props.notebooks && this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
+          <Route exact path="/notebooks/:id/edit" render={(routerProps => <NotebookForm notebook={this.props.notebooks && this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
           <Route exact path="/notes">
             <NotesContainer notes={this.props.notes.notes}/>
           </Route>
-          <Route exact path="/notebooks/:id/notes/new" render={(routerProps => <NoteForm notebook={this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
+          <Route exact path="/notebooks/:id/notes/new" render={(routerProps => <NoteForm notebook={this.props.notebooks && this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
         </Switch>
       </>
     )

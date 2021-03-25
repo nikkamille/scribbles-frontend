@@ -3,7 +3,7 @@ import { Link, Route } from 'react-router-dom';
 import Note from './Note';
 
 function Notes(props) {
-    debugger
+    // debugger
     return (
         <div>
             <br/>

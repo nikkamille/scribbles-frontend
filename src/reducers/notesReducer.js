@@ -1,5 +1,5 @@
 export default function notesReducer(state = [], action) {
-    // debugger
+    debugger
     switch (action.type) {
         case 'FETCH_NOTES':
             return {
@@ -9,7 +9,8 @@ export default function notesReducer(state = [], action) {
             // let notebookId = action.payload.notebook_id
             // Go back to video 9 if we get an error for the store. This should render the note right away.
             return {
-                ...state, note: [...state.notebooks[action.payload.notebook_id].notes, action.payload]
+                // ...state, note: [...state.notebooks[action.payload.notebook_id].notes, action.payload]
+                ...state, notes: [...state.notes, action.payload]
             }
         case 'DELETE_NOTE':
             // Fix reducer to return notes under a notebook.
