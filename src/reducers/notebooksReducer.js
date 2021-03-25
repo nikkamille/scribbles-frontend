@@ -19,6 +19,13 @@ export default function notebooksReducer(state = [], action) {
             return {
                 notebooks: newNotebooks
             }
+        case 'ADD_NOTE':
+            const index = state.notebooks.findIndex(notebook => notebook.id === action.payload.notebook_id)
+            const updatedNotebooks = [...state.notebooks]
+            updatedNotebooks[index] = {...updatedNotebooks[index], notes: [...updatedNotebooks[index].notes, action.payload]}
+            return {
+                notebooks: updatedNotebooks
+            }
         default:
             return state
     }
