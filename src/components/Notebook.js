@@ -10,6 +10,7 @@ import NewNoteButton from './NewNoteButton';
 function Notebook(props) {
     
     let notebook = props.notebook
+    console.log(notebook)
 
     // debugger
 

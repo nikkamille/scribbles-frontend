@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import addNote from '../actions/addNote';
 
 class NoteForm extends Component {
@@ -10,6 +11,8 @@ class NoteForm extends Component {
         date: ""
     }
 
+    // notebook = this.props.notebook
+
 
     handleChange = (event) => {
         this.setState({
@@ -18,8 +21,12 @@ class NoteForm extends Component {
     }
 
     handleSubmit = (event) => {
+        // debugger
         event.preventDefault()
+        let notebook = this.props.notebook
+        console.log(notebook)
         this.props.addNote(this.state, this.props.notebook.id)
+        this.props.history.push(`/notebooks/${notebook.id}`)
         this.setState({
             title: "",
             content: "",
@@ -42,4 +49,4 @@ class NoteForm extends Component {
     }
 }
 
-export default connect(null, { addNote })(NoteForm)
+export default withRouter(connect(null, { addNote })(NoteForm))

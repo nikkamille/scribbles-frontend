@@ -4,6 +4,7 @@ import Note from './Note';
 
 function Notes(props) {
     // debugger
+    console.log(props.notes)
     return (
         <div>
             <br/>

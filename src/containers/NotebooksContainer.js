@@ -16,6 +16,7 @@ class NotebooksContainer extends Component {
     
     render() {
     // debugger
+    console.log(this.props.notebooks)
         return(
             <>
                 <NewNotebookButton/>

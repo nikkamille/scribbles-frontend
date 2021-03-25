@@ -34,17 +34,14 @@ class App extends Component {
           </Route>
           <Route exact path="/notebooks/new">
             <NotebookForm notebooks={this.props.notebooks}/> 
-            {/* Pass in the notebooks props so the notebook id can be accessed inside the notebook form. */}
           </Route>
-          {/* <Route exact path="/notebooks/:id/edit">
-            <NotebookForm notebook={this.props.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))}/>
-          </Route> */}
-          <Route exact path="/notebooks/:id" render={(routerProps => <Notebook notebook={this.props.notebooks && this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
-          <Route exact path="/notebooks/:id/edit" render={(routerProps => <NotebookForm notebook={this.props.notebooks && this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
+          <Route exact path="/notebooks/:id" render={(routerProps => <Notebook notebook={this.props && this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
+          <Route exact path="/notebooks/:id/edit" render={(routerProps => <NotebookForm notebook={this.props && this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
           <Route exact path="/notes">
             <NotesContainer notes={this.props.notes.notes}/>
           </Route>
-          <Route exact path="/notebooks/:id/notes/new" render={(routerProps => <NoteForm notebook={this.props.notebooks && this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
+          <Route exact path="/notebooks/:id/notes/new" render={(routerProps => <NoteForm notebook={this.props && this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
+          {/* Optional: Add Error Boundaries to handle errors, for example, when the page refreshes and the redux store isn't ready yet, an error shows up. */}
         </Switch>
       </>
     )
