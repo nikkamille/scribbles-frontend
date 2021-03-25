@@ -10,6 +10,7 @@ function Note(props) {
 
     const handleDelete = () => {
         console.log("Deleted")
+        // props.deleteNote(props.note.notebook_id, props.note.id)
         props.deleteNote(props.note.notebook_id, props.note.id)
     }
 
