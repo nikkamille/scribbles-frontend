@@ -26,6 +26,13 @@ export default function notebooksReducer(state = [], action) {
             return {
                 notebooks: updatedNotebooks
             }
+        case 'DELETE_NOTE':
+            const deleteNoteIndex = state.notebooks.findIndex(notebook => notebook.id === action.notebookId)
+            const deletedNoteNotebooks = [...state.notebooks]
+            deletedNoteNotebooks[deleteNoteIndex] = {...deletedNoteNotebooks[deleteNoteIndex], notes: [...deletedNoteNotebooks[deleteNoteIndex].notes.filter(note => note.id !== action.noteId)]}
+            return {
+                notebooks: deletedNoteNotebooks
+            }
         default:
             return state
     }
