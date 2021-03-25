@@ -9,6 +9,7 @@ import NewNotebookButton from './components/NewNotebookButton';
 import NotebookForm from './components/NotebookForm';
 import fetchNotes from './actions/fetchNotes';
 import NotesContainer from './containers/NotesContainer';
+import NoteForm from './components/NoteForm';
 
 class App extends Component {
 
@@ -43,6 +44,7 @@ class App extends Component {
           <Route exact path="/notes">
             <NotesContainer notes={this.props.notes.notes}/>
           </Route>
+          <Route exact path="/notebooks/:id/notes/new" render={(routerProps => <NoteForm notebook={this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
         </Switch>
       </>
     )

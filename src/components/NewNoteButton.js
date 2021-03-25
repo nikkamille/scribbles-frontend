@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function NewNoteButton() {
+function NewNoteButton(props) {
+    // debugger
     return (
         <div>
-            {/* <Link to="/notebooks/new">
+            <Link to={`/notebooks/${props.notebook.id}/notes/new`}>
                 <button>New Note</button>
-            </Link> */}
+            </Link>
         </div>
     )
     

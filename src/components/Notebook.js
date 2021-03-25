@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
 import deleteNotebook from '../actions/deleteNotebook';
 import NotebookForm from './NotebookForm';
+import NewNoteButton from './NewNoteButton';
 
 function Notebook(props) {
     
@@ -28,6 +29,7 @@ function Notebook(props) {
             <Link to={`/notebooks/${props.notebook.id}/edit`}>
                 <button>Edit Notebook</button>
             </Link>
+            <NewNoteButton notebook={notebook}/>
             <NotesContainer notebook={notebook}/>
             {/* <button onClick={handleDelete}>Delete Notebook</button> */}
             <button onClick={() => {if (window.confirm("Are you sure you want to delete this notebook? This will also delete all your notes inside this notebook.")) handleDelete()}}>Delete Notebook</button>
