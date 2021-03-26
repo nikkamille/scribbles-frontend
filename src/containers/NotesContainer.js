@@ -12,7 +12,7 @@ class NotesContainer extends Component {
         return (
             <div>
                 My Notes Container!
-                <Notes notes={this.props.notebook ? this.props.notebook.notes : this.props.notes.notes}/>
+                <Notes notes={this.props.notebook ? this.props.notebook.notes : this.props.notes}/>
             </div>
         )
     }

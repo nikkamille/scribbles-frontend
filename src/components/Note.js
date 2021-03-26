@@ -5,7 +5,7 @@ import deleteNote from '../actions/deleteNote';
 
 
 function Note(props) {
-    debugger
+    // debugger
 
     let note = props.note
     console.log(note)

@@ -23,7 +23,7 @@ class NoteForm extends Component {
     }
 
     handleSubmit = (event) => {
-        debugger
+        // debugger
         event.preventDefault()
         let notebook = this.props.notebook
         let note = this.state
