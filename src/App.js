@@ -42,7 +42,8 @@ class App extends Component {
             <NotesContainer notes={this.props.notes.notes}/>
           </Route>
           <Route exact path="/notebooks/:id/notes/new" render={(routerProps => <NoteForm notebook={this.props && this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
-          <Route exact path="/notebooks/:id/notes/:id" render={(routerProps => <Note notebook={this.props && this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} note={this.props && this.props.notes.notes.find(note => note.id === parseInt(routerProps.match.params.id))} /> ) }/>
+          <Route exact path="/notebooks/:id/notes/:noteId" render={(routerProps => <Note notebook={this.props && this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} note={this.props && this.props.notes.notes.find(note => note.id === parseInt(routerProps.match.params.noteId))} /> ) }/>
+          <Route exact path="/notebooks/:id/notes/:noteId/edit" render={(routerProps => <NoteForm notebook={this.props && this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} note={this.props && this.props.notes.notes.find(note => note.id === parseInt(routerProps.match.params.noteId))} /> ) }/> 
           {/* Optional: Add Error Boundaries to handle errors, for example, when the page refreshes and the redux store isn't ready yet, an error shows up. */}
           {/* Or maybe create a 404 page - https://learnwithparam.com/blog/creating-404-page-with-react-router/ */}
         </Switch>

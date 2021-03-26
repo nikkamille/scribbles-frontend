@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import deleteNote from '../actions/deleteNote';
 
 
 function Note(props) {
-    // debugger
+    debugger
 
     let note = props.note
     console.log(note)
@@ -19,10 +19,14 @@ function Note(props) {
 
     return(
         <div>
+            <Link to={`/notebooks/${props.notebook.id}/notes/${props.note.id}/edit`}>
+                <button>Edit Note</button>
+            </Link>
             {note && note.date}
             <h3>{note.title}</h3>
             <p>{note.content}</p>
-            <button onClick={handleDelete}>Delete</button>
+            {/* <button onClick={handleDelete}>Delete</button> */}
+            <button onClick={() => {if (window.confirm("Are you sure you want to delete this note?")) handleDelete()}}>Delete Note</button>
         </div>
     )
 }

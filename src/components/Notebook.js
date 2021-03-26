@@ -1,8 +1,8 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+// import { Redirect, Route } from 'react-router-dom';
 import NotesContainer from '../containers/NotesContainer'
 import { connect } from 'react-redux';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter, Link, Redirect } from 'react-router-dom';
 import deleteNotebook from '../actions/deleteNotebook';
 import NotebookForm from './NotebookForm';
 import NewNoteButton from './NewNoteButton';
