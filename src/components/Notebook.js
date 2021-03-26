@@ -6,6 +6,7 @@ import { withRouter, Link } from 'react-router-dom';
 import deleteNotebook from '../actions/deleteNotebook';
 import NotebookForm from './NotebookForm';
 import NewNoteButton from './NewNoteButton';
+import Note from './Note';
 
 function Notebook(props) {
     
@@ -34,10 +35,6 @@ function Notebook(props) {
             <NotesContainer notebook={notebook}/>
             {/* <button onClick={handleDelete}>Delete Notebook</button> */}
             <button onClick={() => {if (window.confirm("Are you sure you want to delete this notebook? This will also delete all your notes inside this notebook.")) handleDelete()}}>Delete Notebook</button>
-
-            {/* <Route exact path="/notebooks/:id/edit">
-                <NotebookForm notebook={props.notebook}/>
-            </Route> */}
         </>
     )
 }
