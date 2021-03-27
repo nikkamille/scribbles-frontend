@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-[Backend](https://github.com/nikkamille/scribbles-backend)
+Backend: https://github.com/nikkamille/scribbles-backend
 
 ## Available Scripts
 
