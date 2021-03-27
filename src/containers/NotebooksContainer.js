@@ -5,7 +5,6 @@ import { Route, Switch } from 'react-router-dom';
 import Notebooks from '../components/Notebooks';
 import Notebook from '../components/Notebook';
 import fetchNotebooks from '../actions/fetchNotebooks';
-import NewNotebookButton from '../components/NewNotebookButton';
 import NotebookForm from '../components/NotebookForm';
 
 class NotebooksContainer extends Component {
@@ -19,7 +18,7 @@ class NotebooksContainer extends Component {
     console.log(this.props.notebooks)
         return(
             <>
-                <NewNotebookButton/>
+                
                 <Notebooks notebooks={this.props.notebooks}/>
             </>
         )
