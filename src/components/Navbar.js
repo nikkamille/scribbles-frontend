@@ -5,7 +5,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import MenuIcon from '@material-ui/icons/Menu';
 import Grid from '@material-ui/core/Grid';
 
 const styles = makeStyles({
@@ -31,7 +30,7 @@ function Navbar() {
         <AppBar position="sticky" className={classes.barColor}>
             <Toolbar>
                 <Grid container>
-                    <Grid item xs={9}>
+                    <Grid item xs={10}>
                         <Typography variant="h4" component={Link} to={"/"} className={classes.link}>Scribbles</Typography>
                     </Grid>
                     <Grid item xs={1}>
@@ -40,12 +39,10 @@ function Navbar() {
                     <Grid item xs={1}>
                         <Button component={Link} to={"/notebooks"} className={classes.button}>Notebooks</Button>
                     </Grid>
-                    <Grid item xs={1}>
+                    {/* <Grid item xs={1}>
                         <Button component={Link} to={"/notes"} className={classes.button}>Notes</Button>
-                    </Grid>
-                    {/* <Link to="/notebooks/new">New Notebook</Link>
-                    <Link to="/notebooks">Notebooks</Link>
-                    <Link to="/notes">Notes</Link> */}
+                    </Grid> */}
+                    {/* Put back link to notes when styling is completed. */}
                 </Grid>
             </Toolbar>
         </AppBar>

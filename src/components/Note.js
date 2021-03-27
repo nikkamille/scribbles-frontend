@@ -7,7 +7,6 @@ import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 
 const styles = makeStyles({
@@ -16,7 +15,6 @@ const styles = makeStyles({
         width: '90%',
         height: '350%',
         backgroundColor: '#FAF0F1',
-        // borderColor: '#5D6B83',
         margin: 'auto',
         padding: '50px'
     }
@@ -24,7 +22,6 @@ const styles = makeStyles({
 
 
 function Note(props) {
-    // debugger
 
     const classes = styles()
 
@@ -32,8 +29,6 @@ function Note(props) {
     console.log(note)
 
     const handleDelete = () => {
-        console.log("Deleted")
-        // props.deleteNote(props.note.notebook_id, props.note.id)
         props.deleteNote(props.note.notebook_id, props.note.id)
         props.history.push(`/notebooks/${props.note.notebook_id}`)
     }
@@ -49,7 +44,6 @@ function Note(props) {
                         {note && note.date}
                         <h3>{note.title}</h3>
                         <p>{note.content}</p>
-                        {/* <button onClick={handleDelete}>Delete</button> */}
                         <button onClick={() => {if (window.confirm("Are you sure you want to delete this note?")) handleDelete()}}>Delete Note</button>
                     </Grid>
                 </Grid>

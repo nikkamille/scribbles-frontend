@@ -28,7 +28,6 @@ const styles = makeStyles({
 })
 
 function Notebooks(props) {
-    // debugger
     const classes = styles()
 
     return (

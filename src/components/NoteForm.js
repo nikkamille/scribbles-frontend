@@ -12,18 +12,13 @@ class NoteForm extends Component {
         date: this.props.note ? this.props.note.date : ""
     }
 
-    // notebook = this.props.notebook
-
-
     handleChange = (event) => {
-        // debugger
         this.setState({
             [event.target.name]: event.target.value
         })        
     }
 
     handleSubmit = (event) => {
-        // debugger
         event.preventDefault()
         let notebook = this.props.notebook
         let note = this.state

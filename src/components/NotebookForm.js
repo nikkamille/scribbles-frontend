@@ -34,7 +34,6 @@ class NotebookForm extends Component {
             this.props.history.push(`/notebooks/${notebookId}`)
         }
         this.setState({title: ""})
-        // Add a default value for title - if notebook title is empty, it should show up as "Untitled Notebook"
     }
     
     render() {
@@ -45,9 +44,7 @@ class NotebookForm extends Component {
                         Create a New Notebook
                     </Typography>
                     <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
-                        {/* <input type="text" placeholder="Title" value={this.state.title} name="title" onChange={this.handleChange}/> */}
                         <TextField required fullWidth margin="normal" type="text" label="Title" value={this.state.title} name="title" onChange={this.handleChange} variant="outlined"/>
-                        {/* <input type="submit"/> */}
                         <Button type="submit" variant="contained" color="primary">
                             Submit
                         </Button>

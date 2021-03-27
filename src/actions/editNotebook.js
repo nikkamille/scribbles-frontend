@@ -1,6 +1,5 @@
 export default function editNotebook(notebook) {
     return (dispatch) => {
-        // debugger
         const options = {
             method: "PATCH",
             headers: {

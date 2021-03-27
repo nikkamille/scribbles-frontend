@@ -5,7 +5,6 @@ import NotebooksContainer from './containers/NotebooksContainer';
 import Navbar from './components/Navbar';
 import fetchNotebooks from './actions/fetchNotebooks';
 import Notebook from './components/Notebook';
-import NewNotebookButton from './components/NewNotebookButton';
 import NotebookForm from './components/NotebookForm';
 import fetchNotes from './actions/fetchNotes';
 import NotesContainer from './containers/NotesContainer';
@@ -60,12 +59,6 @@ class App extends Component {
             </Route>
             <Route exact path="/notebooks/:id/notes/new" render={(routerProps => <NoteForm notebook={this.props && this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} /> ) }/>
             <Route exact path="/notebooks/:id/notes/:noteId" render={(routerProps => <Note notebook={this.props && this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} note={this.props && this.props.notes.notes.find(note => note.id === parseInt(routerProps.match.params.noteId))} /> ) }/>
-            {/* <Route exact path="/notebooks/:id/notes/:noteId" render={(routerProps => 
-              <>
-                <Notebook notebook={this.props && this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} />
-                <Note notebook={this.props && this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} note={this.props && this.props.notes.notes.find(note => note.id === parseInt(routerProps.match.params.noteId))} /> 
-              </>
-            ) }/> */}
             <Route exact path="/notebooks/:id/notes/:noteId/edit" render={(routerProps => <NoteForm notebook={this.props && this.props.notebooks.notebooks.find(notebook => notebook.id === parseInt(routerProps.match.params.id))} note={this.props && this.props.notes.notes.find(note => note.id === parseInt(routerProps.match.params.noteId))} /> ) }/> 
             {/* Optional: Add Error Boundaries to handle errors, for example, when the page refreshes and the redux store isn't ready yet, an error shows up. */}
             {/* Or maybe create a 404 page - https://learnwithparam.com/blog/creating-404-page-with-react-router/ */}
