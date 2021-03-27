@@ -11,6 +11,7 @@ import fetchNotes from './actions/fetchNotes';
 import NotesContainer from './containers/NotesContainer';
 import NoteForm from './components/NoteForm';
 import Note from './components/Note';
+import Home from './components/Home';
 
 class App extends Component {
 
@@ -30,6 +31,9 @@ class App extends Component {
       <>
         <Navbar/>
         <Switch>
+          <Route exact path="/">
+            <Home/>
+          </Route>
           <Route exact path="/notebooks">
             <NotebooksContainer notebooks={this.props.notebooks}/>
           </Route>
