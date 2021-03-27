@@ -10,9 +10,23 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 
+const styles = makeStyles({
+    root: {
+        textAlign: 'center',
+        width: '90%',
+        height: '350%',
+        backgroundColor: '#FAF0F1',
+        // borderColor: '#5D6B83',
+        margin: 'auto',
+        padding: '50px'
+    }
+})
+
 
 function Note(props) {
     // debugger
+
+    const classes = styles()
 
     let note = props.note
     console.log(note)
@@ -25,16 +39,22 @@ function Note(props) {
     }
 
     return(
-        <div>
-            <Link to={`/notebooks/${props.notebook.id}/notes/${props.note.id}/edit`}>
-                <button>Edit Note</button>
-            </Link>
-            {note && note.date}
-            <h3>{note.title}</h3>
-            <p>{note.content}</p>
-            {/* <button onClick={handleDelete}>Delete</button> */}
-            <button onClick={() => {if (window.confirm("Are you sure you want to delete this note?")) handleDelete()}}>Delete Note</button>
-        </div>
+        <>
+            <Box m={4}>
+            <Grid container spacing={3}>
+                <Grid item xs={9}>
+                        <Link to={`/notebooks/${props.notebook.id}/notes/${props.note.id}/edit`}>
+                            <button>Edit Note</button>
+                        </Link>
+                        {note && note.date}
+                        <h3>{note.title}</h3>
+                        <p>{note.content}</p>
+                        {/* <button onClick={handleDelete}>Delete</button> */}
+                        <button onClick={() => {if (window.confirm("Are you sure you want to delete this note?")) handleDelete()}}>Delete Note</button>
+                    </Grid>
+                </Grid>
+            </Box>
+        </>
     )
 }
 

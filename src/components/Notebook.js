@@ -49,7 +49,7 @@ function Notebook(props) {
         <>
             <Box m={4}>
                 <Grid container spacing={3}>
-                    <Grid item xs={3}>
+                    <Grid item xs={12}>
                         <Typography variant="h5">
                             {notebook ? props.notebook.title : null}
                         </Typography>
@@ -61,13 +61,13 @@ function Notebook(props) {
                         <NotesContainer notebook={notebook}/>
                         <button onClick={() => {if (window.confirm("Are you sure you want to delete this notebook? This will also delete all your notes inside this notebook.")) handleDelete()}}>Delete Notebook</button>
                     </Grid>
-                    <Grid item xs={9}>
+                    {/* <Grid item xs={9}>
                         <Paper className={classes.root} elevation={4}>
                             <Typography variant="h4" className={classes.text}>
                                 Keep on writing!
                             </Typography>
                         </Paper>
-                    </Grid>
+                    </Grid> */}
                 </Grid>
             </Box>
         </>
