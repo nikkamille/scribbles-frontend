@@ -12,8 +12,28 @@ import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import { makeStyles } from '@material-ui/core/styles';
+
+
+const styles = makeStyles({
+    root: {
+        textAlign: 'center',
+        width: '90%',
+        height: '350%',
+        backgroundColor: '#FAF0F1',
+        // borderColor: '#5D6B83',
+        margin: 'auto',
+        padding: '50px'
+    },
+    text: {
+        fontFamily: 'caveat'
+    }
+})
 
 function Notebook(props) {
+
+    const classes = styles()
     
     let notebook = props.notebook
     console.log(notebook)
@@ -42,7 +62,11 @@ function Notebook(props) {
                         <button onClick={() => {if (window.confirm("Are you sure you want to delete this notebook? This will also delete all your notes inside this notebook.")) handleDelete()}}>Delete Notebook</button>
                     </Grid>
                     <Grid item xs={9}>
-                        
+                        <Paper className={classes.root} elevation={4}>
+                            <Typography variant="h4" className={classes.text}>
+                                Keep on writing!
+                            </Typography>
+                        </Paper>
                     </Grid>
                 </Grid>
             </Box>

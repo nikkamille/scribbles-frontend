@@ -16,7 +16,7 @@ const styles = makeStyles({
         height: 120,
         borderColor: '#5D6B83',
         margin: 'auto',
-        padding: '10px',
+        padding: '40px',
         backgroundColor: '#FAF0F1'
     },
     content: {
