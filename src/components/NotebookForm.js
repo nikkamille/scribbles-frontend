@@ -48,7 +48,7 @@ class NotebookForm extends Component {
                         {/* <input type="text" placeholder="Title" value={this.state.title} name="title" onChange={this.handleChange}/> */}
                         <TextField required fullWidth margin="normal" type="text" label="Title" value={this.state.title} name="title" onChange={this.handleChange} variant="outlined"/>
                         {/* <input type="submit"/> */}
-                        <Button type="submit" variant="contained">
+                        <Button type="submit" variant="contained" color="primary">
                             Submit
                         </Button>
                     </form>
