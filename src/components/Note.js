@@ -45,7 +45,7 @@ function Note(props) {
                 <Grid item xs={9}>
                         <Link to={`/notebooks/${props.notebook.id}/notes/${props.note.id}/edit`}>
                             <button>Edit Note</button>
-                        </Link>
+                        </Link><br/>
                         {note && note.date}
                         <h3>{note.title}</h3>
                         <p>{note.content}</p>
