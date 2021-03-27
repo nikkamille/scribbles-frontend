@@ -3,6 +3,11 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import addNotebook from '../actions/addNotebook';
 import editNotebook from '../actions/editNotebook';
+import TextField from '@material-ui/core/TextField';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 
 class NotebookForm extends Component {
     
@@ -34,12 +39,21 @@ class NotebookForm extends Component {
     
     render() {
         return(
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text" placeholder="Title" value={this.state.title} name="title" onChange={this.handleChange}/>
-                    <input type="submit"/>
-                </form>
-            </div>
+            <Container>
+                <Box m={8}>
+                    <Typography variant="h5">
+                        Create a New Notebook
+                    </Typography>
+                    <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
+                        {/* <input type="text" placeholder="Title" value={this.state.title} name="title" onChange={this.handleChange}/> */}
+                        <TextField required fullWidth margin="normal" type="text" label="Title" value={this.state.title} name="title" onChange={this.handleChange} variant="outlined"/>
+                        {/* <input type="submit"/> */}
+                        <Button type="submit" variant="contained">
+                            Submit
+                        </Button>
+                    </form>
+                </Box>
+            </Container>
         )
     }
 }
